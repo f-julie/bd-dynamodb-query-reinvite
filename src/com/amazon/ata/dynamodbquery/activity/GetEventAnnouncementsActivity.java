@@ -34,6 +34,6 @@ public class GetEventAnnouncementsActivity {
      */
     public List<EventAnnouncement> handleRequest(final String eventId) {
         // TODO: implement
-        return Collections.emptyList();
+        return eventAnnouncementDao.getEventAnnouncements(eventId);
     }
 }

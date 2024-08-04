@@ -14,16 +14,16 @@ com/amazon/ata/dynamodbquery/dao/MemberDao.java
  com.amazon.ata.dynamodbquery.dao.MemberDao
 com/amazon/ata/dynamodbquery/activity/DeleteMemberActivity.java
  com.amazon.ata.dynamodbquery.activity.DeleteMemberActivity
-com/amazon/ata/dynamodbquery/activity/CreateMemberActivity.java
- com.amazon.ata.dynamodbquery.activity.CreateMemberActivity
 com/amazon/ata/dynamodbquery/activity/GetInvitesForEventActivity.java
  com.amazon.ata.dynamodbquery.activity.GetInvitesForEventActivity
+com/amazon/ata/dynamodbquery/activity/CreateMemberActivity.java
+ com.amazon.ata.dynamodbquery.activity.CreateMemberActivity
 com/amazon/ata/dynamodbquery/activity/GetInviteActivity.java
  com.amazon.ata.dynamodbquery.activity.GetInviteActivity
-com/amazon/ata/dynamodbquery/activity/CreateEventActivity.java
- com.amazon.ata.dynamodbquery.activity.CreateEventActivity
 com/amazon/ata/dynamodbquery/activity/GetMemberActivity.java
  com.amazon.ata.dynamodbquery.activity.GetMemberActivity
+com/amazon/ata/dynamodbquery/activity/CreateEventActivity.java
+ com.amazon.ata.dynamodbquery.activity.CreateEventActivity
 com/amazon/ata/dynamodbquery/dao/InviteDao.java
  com.amazon.ata.dynamodbquery.dao.InviteDao
 com/amazon/ata/dynamodbquery/activity/CreateInviteActivity.java

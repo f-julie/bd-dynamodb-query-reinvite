@@ -2,19 +2,14 @@ package com.amazon.ata.dynamodbquery.dao;
 
 import com.amazon.ata.dynamodbquery.dao.models.Invite;
 
-import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBDeleteExpression;
-import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper;
-import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBScanExpression;
+import com.amazonaws.services.dynamodbv2.datamodeling.*;
 import com.amazonaws.services.dynamodbv2.model.AttributeValue;
 import com.amazonaws.services.dynamodbv2.model.ComparisonOperator;
 import com.amazonaws.services.dynamodbv2.model.ConditionalCheckFailedException;
 import com.amazonaws.services.dynamodbv2.model.ExpectedAttributeValue;
 import com.google.common.collect.ImmutableMap;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 import javax.inject.Inject;
 
 /**
@@ -73,7 +68,26 @@ public class InviteDao {
      */
     public List<Invite> getInvitesForEvent(String eventId, String exclusiveStartMemberId) {
         // TODO: implement
-        return Collections.emptyList();
+        Invite invite = new Invite();
+        invite.setEventId(eventId);
+
+        Map<String, AttributeValue> exclusiveStartKey = null;
+        if (exclusiveStartMemberId != null) {
+            exclusiveStartKey = new HashMap<>();
+            exclusiveStartKey.put("eventId", new AttributeValue().withS(eventId));
+            exclusiveStartKey.put("memberId", new AttributeValue().withS(exclusiveStartMemberId));
+        }
+
+        DynamoDBQueryExpression<Invite> queryExpression =
+                new DynamoDBQueryExpression<Invite>()
+                .withHashKeyValues(invite)
+                .withLimit(10)
+                .withExclusiveStartKey(exclusiveStartKey);
+
+        QueryResultPage<Invite> queryResultPage =
+            mapper.queryPage(Invite.class, queryExpression);
+
+        return queryResultPage.getResults();
     }
 
     /**

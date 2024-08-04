@@ -31,6 +31,6 @@ public class GetInvitesForEventActivity {
      */
     public List<Invite> handleRequest(final String eventId, final String exclusiveStartMemberId) {
         // TODO: implement
-        return Collections.emptyList();
+        return inviteDao.getInvitesForEvent(eventId, exclusiveStartMemberId);
     }
 }

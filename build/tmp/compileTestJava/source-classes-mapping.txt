@@ -18,8 +18,6 @@ com/amazon/ata/dynamodbquery/dao/EventAnnouncementDaoTest.java
  com.amazon.ata.dynamodbquery.dao.EventAnnouncementDaoTest
 com/amazon/ata/dynamodbquery/test/integration/Phase2Test.java
  com.amazon.ata.dynamodbquery.test.integration.Phase2Test
-com/amazon/ata/dynamodbquery/test/integration/Phase4Test.java
- com.amazon.ata.dynamodbquery.test.integration.Phase4Test
 com/amazon/ata/dynamodbquery/activity/GetEventAnnouncementsBetweenDatesActivityTest.java
  com.amazon.ata.dynamodbquery.activity.GetEventAnnouncementsBetweenDatesActivityTest
 com/amazon/ata/dynamodbquery/dao/InviteDaoTest.java
